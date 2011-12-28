@@ -181,16 +181,6 @@ static OSErr GetMovieFromCFURLRef(CFURLRef inURLRef, Movie *outMovieRef)
 				return YES;
 			}
 			
-			/*NSLog(@"asbd infos: (size = %i vs. %i)", size, sizeof(fileAsbd));
-			
-			NSLog(@"   * Sample Rate:   %8f", fileAsbd.mSampleRate);
-			NSLog(@"   * FormatID:      %i", fileAsbd.mFormatID);
-			NSLog(@"   * FormatFlags:   %x", fileAsbd.mFormatFlags);
-			NSLog(@"   * b per packet:  %i", fileAsbd.mBytesPerPacket);
-			NSLog(@"   * f per packet:  %i", fileAsbd.mFramesPerPacket);
-			NSLog(@"   * b per frame:   %i", fileAsbd.mBytesPerFrame);
-			NSLog(@"   * channels:      %i", fileAsbd.mChannelsPerFrame);
-			NSLog(@"   * bit depth:     %i", fileAsbd.mBitsPerChannel);*/
 			mBufferList->mBuffers[0].mNumberChannels = 2;
 			mBufferList->mBuffers[0].mDataByteSize = requestedFrames*4*fileAsbd.mChannelsPerFrame;
 			mBufferList->mBuffers[0].mData = malloc(requestedFrames*4*fileAsbd.mChannelsPerFrame);
@@ -271,17 +261,6 @@ static OSErr GetMovieFromCFURLRef(CFURLRef inURLRef, Movie *outMovieRef)
 												  kQTPropertyClass_MovieAudioExtraction_Audio,
 												  kQTMovieAudioExtractionAudioPropertyID_AudioStreamBasicDescription,
 												  sizeof (asbd), &asbd, nil);
-			
-			//NSLog(@"asbd infos: (size = %i vs. %i)",, sizeof(asbd));
-			 
-			/*NSLog(@"   * Sample Rate:   %8f", asbd.mSampleRate);
-			NSLog(@"   * FormatID:      %i", asbd.mFormatID);
-			NSLog(@"   * FormatFlags:   %x", asbd.mFormatFlags);
-			NSLog(@"   * b per packet:  %i", asbd.mBytesPerPacket);
-			NSLog(@"   * f per packet:  %i", asbd.mFramesPerPacket);
-			NSLog(@"   * b per frame:   %i", asbd.mBytesPerFrame);
-			NSLog(@"   * channels:      %i", asbd.mChannelsPerFrame);
-			NSLog(@"   * bit depth:     %i", asbd.mBitsPerChannel);*/
 			
 			mBufferList->mBuffers[0].mNumberChannels = 2;
 			mBufferList->mBuffers[0].mDataByteSize = requestedFrames*4*asbd.mChannelsPerFrame;
@@ -367,7 +346,7 @@ static OSErr GetMovieFromCFURLRef(CFURLRef inURLRef, Movie *outMovieRef)
 											  kQTMovieAudioExtractionMoviePropertyID_CurrentTime,
 											  sizeof(TimeRecord), &timeRec);
 		if(err!= noErr)
-			NSLog(@"error setting time: %i", err);
+			NSLog(NSLocalizedString(@"error setting time: %i", @""), err);
 
 		UInt32 flags = 0;
 		UInt32 numFrames = requestedFrames;

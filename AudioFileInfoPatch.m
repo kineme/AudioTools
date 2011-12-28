@@ -34,7 +34,7 @@
 
 		if(!s)
 		{
-			NSLog(@"didn't load");
+			NSLog(NSLocalizedString(@"didn't load", @""));
 			[outputFileLoaded setBooleanValue:NO];
 			[outputDuration setDoubleValue:0.0];
 			return YES;

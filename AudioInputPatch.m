@@ -193,7 +193,7 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 									  0, YES,
 									  kAudioDevicePropertyDeviceUID,
 									  &size, &uid))
-				NSLog(@"Error getting device uid");
+				NSLog(NSLocalizedString(@"Error getting device uid", @""));
 			if([uid isEqual: deviceUID])
 			{
 				//NSLog(@"found matching device %i %@", devices[i],uid);
@@ -208,7 +208,7 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 							  audioBufferHandler,
 							  self,
 							  &procID))
-		NSLog(@"Error creating IOProc");
+		NSLog(NSLocalizedString(@"Error creating IOProc", @""));
 	//AudioDeviceStart(device, procID);
 	
 	AudioStreamBasicDescription recordFormat;
@@ -217,7 +217,7 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 	AudioHardwareGetProperty(kAudioDevicePropertyStreamFormat, &size, &recordFormat);
 	if(recordFormat.mFormatFlags & kLinearPCMFormatFlagIsFloat == FALSE)
 	{
-		NSLog(@"QCAudioInput:  non-floating samples not currently supported");
+		NSLog(NSLocalizedString(@"QCAudioInput:  non-floating samples not currently supported", @""));
 	}
 	//NSLog(@"float samples: %i",recordFormat.mFormatFlags & kLinearPCMFormatFlagIsFloat);
 	//AudioDeviceStart(device, procID);

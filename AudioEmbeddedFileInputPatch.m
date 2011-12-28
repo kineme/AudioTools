@@ -21,7 +21,7 @@ static OSStatus dataBufferWriteProc(void * 		inClientData,
 									const void *buffer, 
 									UInt32    * actualCount)
 {
-	NSLog(@"writeProc");
+	NSLog(NSLocalizedString(@"writeProc", @""));
 	return kAudioFileOperationNotSupportedError; // Not Possible ;)
 }
 
@@ -32,7 +32,7 @@ static SInt64 dataBufferGetSizeProc(void *inClientData)
 
 static OSStatus dataBufferSetSizeProc(void * inClientData, SInt64 inSize)
 {
-	NSLog(@"setSizeProc");
+	NSLog(NSLocalizedString(@"setSizeProc", @""));
 	return kAudioFileOperationNotSupportedError; // Not Possible ;)
 }
 
@@ -151,13 +151,13 @@ static OSStatus dataBufferSetSizeProc(void * inClientData, SInt64 inSize)
 											 0,	// hint -- M4A hint doesn't seem to work though :/
 											 &audioDataFile)) != noErr)
 		{
-			NSLog(@"failed to open data with callbacks: %08x", err);
+			NSLog(NSLocalizedString(@"failed to open data with callbacks: %08x", @""), err);
 			audioDataFile = NULL;
 			return;
 		}
 		if(ExtAudioFileWrapAudioFileID(audioDataFile, NO, &audioFile) != noErr)
 		{
-			NSLog(@"failed to wrap audioFile");
+			NSLog(NSLocalizedString(@"failed to wrap audioFile", @""));
 			AudioFileClose(audioDataFile);
 			audioFile = NULL;
 			audioDataFile = NULL;
@@ -181,16 +181,6 @@ static OSStatus dataBufferSetSizeProc(void * inClientData, SInt64 inSize)
 			return;
 		}
 		
-		/*NSLog(@"asbd infos: (size = %i vs. %i)", size, sizeof(fileAsbd));
-		 
-		 NSLog(@"   * Sample Rate:   %8f", fileAsbd.mSampleRate);
-		 NSLog(@"   * FormatID:      %i", fileAsbd.mFormatID);
-		 NSLog(@"   * FormatFlags:   %x", fileAsbd.mFormatFlags);
-		 NSLog(@"   * b per packet:  %i", fileAsbd.mBytesPerPacket);
-		 NSLog(@"   * f per packet:  %i", fileAsbd.mFramesPerPacket);
-		 NSLog(@"   * b per frame:   %i", fileAsbd.mBytesPerFrame);
-		 NSLog(@"   * channels:      %i", fileAsbd.mChannelsPerFrame);
-		 NSLog(@"   * bit depth:     %i", fileAsbd.mBitsPerChannel);*/
 		mBufferList->mBuffers[0].mNumberChannels = 2;
 		mBufferList->mBuffers[0].mDataByteSize = _requestedFrames*4*fileAsbd.mChannelsPerFrame;
 		mBufferList->mBuffers[0].mData = malloc(_requestedFrames*4*fileAsbd.mChannelsPerFrame);
