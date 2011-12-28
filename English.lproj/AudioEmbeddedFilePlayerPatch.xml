@@ -18,6 +18,8 @@
 Use the Kineme Audio Device Info to enumerate available output devices, and then feed the UID of your preferred device to the Kineme Audio File Player Patch's Device UID input.  If the Device UID is empty, the system default output device is used.
 
 You can optionally specify the way the audio file's channels are mapped to device output channels, by entering a comma-separated list in the Kineme Audio File Player Patch's Channel Mapping input.  For example, if you have a stereo audio file, and are playing on a device with four outputs, and want to output the stereo file to the last two channels of the device, enter "2,3" (i.e., "Map the first audio file channel to device channel 2, Map the second audio file channel to device channel 3").
+		
+The audio file, which you can set in the patch's Settings window, is saved inside the composition. 
 
 http://kineme.net/</string>
 		<key>name</key>

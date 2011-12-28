@@ -14,6 +14,8 @@
 		<string>Copyright 2009 Kosada Incorporated. All rights reserved.</string>
 		<key>description</key>
 		<string>The Kineme Audio Embedded File Input Patch outputs a structure that contains sample data from a specified Audio File.  It also generates an image that represents the audio levels.  Each horizontal line is a channel (typically 2), and each vertical line is a sample.
+		
+The audio file, which you can set in the patch's Settings window, is saved inside the composition. 
 
 http://kineme.net/</string>
 		<key>name</key>
