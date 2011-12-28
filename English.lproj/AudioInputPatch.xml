@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>Kineme Audio</string>
+		<key>categories</key>
+		<array>
+			<string>Kineme Audio</string>
+		</array>
+		<key>copyright</key>
+		<string>Copyright 2009 Kosada Incorporated. All rights reserved.</string>
+		<key>description</key>
+		<string>The Kineme Audio Input patch outputs a structure that contains sample data for the current audio input.  It also generates an image that represents the audio levels.  Each horizontal line is a channel (typically 2), and each vertical line is a sample.
+
+http://kineme.net/</string>
+		<key>name</key>
+		<string>Audio Input</string>
+	</dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputDeviceUID</key>
+		<dict>
+			<key>description</key>
+			<string>Specify a Device UID from the list of possible values
+provided by the Kineme Audio Device Info Patch,
+or specify an empty string for the system default output device</string>
+			<key>name</key>
+			<string>Device UID</string>
+		</dict>
+		<key>inputFrequencyMode</key>
+		<dict>
+			<key>description</key>
+			<string>Format in which the frequency data is presented</string>
+			<key>name</key>
+			<string>Frequency Mode</string>
+			<key>menu</key>
+			<array>
+				<string>Off</string>
+				<string>Linear</string>
+				<string>Quadratic Average</string>
+				<string>Logarithmic Average</string>
+			</array>
+		</dict>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputWaveform</key>
+		<dict>
+			<key>description</key>
+			<string>Captured Waveform data</string>
+			<key>name</key>
+			<string>Waveform</string>
+		</dict>
+		<key>outputPeaks</key>
+		<dict>
+			<key>description</key>
+			<string>Local Maximum value from Captured Waveform data</string>
+			<key>name</key>
+			<string>Volume Peaks</string>
+		</dict>
+		<key>outputFrequency</key>
+		<dict>
+			<key>description</key>
+			<string>Per-channel frequency data structure</string>
+			<key>name</key>
+			<string>Frequency</string>
+		</dict>
+		<key>outputWaveformImage</key>
+		<dict>
+			<key>description</key>
+			<string>Captured Waveform data as an image</string>
+			<key>name</key>
+			<string>Waveform Image</string>
+		</dict>
+		
+	</dict>
+</dict>
+</plist>

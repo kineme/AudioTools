@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>Kineme Audio</string>
+		<key>categories</key>
+		<array>
+			<string>Kineme Audio</string>
+		</array>
+		<key>copyright</key>
+		<string>Copyright 2009 Kosada Incorporated. All rights reserved.</string>
+		<key>description</key>
+		<string>The Kineme Audio System Beep Patch causes the user's specified Alert Sound to play.
+http://kineme.net/</string>
+		<key>name</key>
+		<string>Audio System Beep</string>
+	</dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputTrigger</key>
+		<dict>
+			<key>description</key>
+			<string>Triggers the beep</string>
+			<key>name</key>
+			<string>Trigger</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

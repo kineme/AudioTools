@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>Kineme Audio</string>
+		<key>categories</key>
+		<array>
+			<string>Kineme Audio</string>
+		</array>
+		<key>copyright</key>
+		<string>Copyright 2009 Kosada Incorporated. All rights reserved.</string>
+		<key>description</key>
+		<string>The Kineme Audio Embedded File Player Patch asynchronously plays the specified audio file (anything that QuickTime supports) on the specified output device, on the rising edge of the Trig input.
+
+Use the Kineme Audio Device Info to enumerate available output devices, and then feed the UID of your preferred device to the Kineme Audio File Player Patch's Device UID input.  If the Device UID is empty, the system default output device is used.
+
+You can optionally specify the way the audio file's channels are mapped to device output channels, by entering a comma-separated list in the Kineme Audio File Player Patch's Channel Mapping input.  For example, if you have a stereo audio file, and are playing on a device with four outputs, and want to output the stereo file to the last two channels of the device, enter "2,3" (i.e., "Map the first audio file channel to device channel 2, Map the second audio file channel to device channel 3").
+
+http://kineme.net/</string>
+		<key>name</key>
+		<string>Audio Embedded File Player</string>
+	</dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputPath</key>
+		<dict>
+			<key>description</key>
+			<string>Path</string>
+			<key>name</key>
+			<string>Path</string>
+		</dict>
+		<key>inputDeviceUID</key>
+		<dict>
+			<key>description</key>
+			<string>Specify a Device UID from the list of possible values
+provided by the Kineme Audio Device Info Patch,
+or specify an empty string for the system default output device</string>
+			<key>name</key>
+			<string>Device UID</string>
+		</dict>
+		<key>inputChannelMapping</key>
+		<dict>
+			<key>description</key>
+			<string>Specify a comma-separated list of the audio device channels
+the audio file channels should be mapped to,
+or specify an empty string for the system default mapping</string>
+			<key>name</key>
+			<string>Channel Mapping</string>
+		</dict>
+		<key>inputLoop</key>
+		<dict>
+			<key>description</key>
+			<string>Sets whether the sound should automatically restart when it is finished playing</string>
+			<key>name</key>
+			<string>Loop</string>
+		</dict>
+		<key>inputTrig</key>
+		<dict>
+			<key>description</key>
+			<string>Playback of the Audio File begins on the rising edge of this input</string>
+			<key>name</key>
+			<string>Trig</string>
+		</dict>
+		<key>inputCurrentVolume</key>
+		<dict>
+			<key>description</key>
+			<string>Sets the current volume for all currently-playing sounds,
+and the initial volume for sounds started after this value is set.
+
+Does not affect the system-wide volume.</string>
+			<key>name</key>
+			<string>Current Volume</string>
+		</dict>
+		<key>inputCurrentPosition</key>
+		<dict>
+			<key>description</key>
+			<string>Sets the current playback position (in seconds) for all currently-playing sounds,
+and the initial playback position for sounds started after this value is set.</string>
+			<key>name</key>
+			<string>Current Position</string>
+		</dict>
+		<key>inputSynchronous</key>
+		<dict>
+			<key>description</key>
+			<string>Starts playing the sound synchronously (not on another thread)</string>
+			<key>name</key>
+			<string>Synchronous</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>Kineme Audio</string>
+		<key>categories</key>
+		<array>
+			<string>Kineme Audio</string>
+		</array>
+		<key>copyright</key>
+		<string>Copyright 2009 Kosada Incorporated. All rights reserved.</string>
+		<key>description</key>
+		<string>The Kineme Audio Embedded File Input Patch outputs a structure that contains sample data from a specified Audio File.  It also generates an image that represents the audio levels.  Each horizontal line is a channel (typically 2), and each vertical line is a sample.
+
+http://kineme.net/</string>
+		<key>name</key>
+		<string>Audio Embedded File Input</string>
+	</dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputPath</key>
+		<dict>
+			<key>description</key>
+			<string>The Audio File path</string>
+			<key>name</key>
+			<string>Path</string>
+		</dict>
+		<key>inputSampleBuffer</key>
+		<dict>
+			<key>description</key>
+			<string>Number of samples to retrieve.  This value also affects the number of Frequency bands --- more samples = more frequency bands.</string>
+			<key>name</key>
+			<string>Sample Buffer</string>
+			<key>menu</key>
+			<array>
+				<string>256 samples</string>
+				<string>512 samples</string>
+				<string>1024 samples</string>
+				<string>2048 samples</string>
+				<string>4096 samples</string>
+				<string>8192 samples</string>
+				<string>16384 samples</string>
+				<string>32768 samples</string>
+				<string>65536 samples</string>
+			</array>
+		</dict>
+		<key>inputFrequencyMode</key>
+		<dict>
+			<key>description</key>
+			<string>Format in which the frequency data is presented</string>
+			<key>name</key>
+			<string>Frequency Mode</string>
+			<key>menu</key>
+			<array>
+				<string>Off</string>
+				<string>Linear</string>
+				<string>Quadratic Average</string>
+				<string>Logarithmic Average</string>
+			</array>
+		</dict>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputWaveform</key>
+		<dict>
+			<key>description</key>
+			<string>Audio File Waveform data</string>
+			<key>name</key>
+			<string>Waveform</string>
+		</dict>
+		<key>outputPeaks</key>
+		<dict>
+			<key>description</key>
+			<string>Local Maximum value from Audio File Waveform data</string>
+			<key>name</key>
+			<string>Volume Peaks</string>
+		</dict>
+		<key>outputFrequency</key>
+		<dict>
+			<key>description</key>
+			<string>Per-channel frequency data structure</string>
+			<key>name</key>
+			<string>Frequency</string>
+		</dict>
+		<key>outputWaveformImage</key>
+		<dict>
+			<key>description</key>
+			<string>Audio File Waveform data as an image</string>
+			<key>name</key>
+			<string>Waveform Image</string>
+		</dict>
+		<key>outputDuration</key>
+		<dict>
+			<key>description</key>
+			<string>Audio Duration (in seconds)</string>
+			<key>name</key>
+			<string>Duration</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

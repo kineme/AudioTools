@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>Kineme Audio</string>
+		<key>categories</key>
+		<array>
+			<string>Kineme Audio</string>
+		</array>
+		<key>copyright</key>
+		<string>Copyright 2009 Kosada Incorporated. All rights reserved.</string>
+		<key>description</key>
+		<string>The Kineme Audio File Info Patch provides some basic information about the specified audio file (anything that QuickTime supports).
+
+http://kineme.net/</string>
+		<key>name</key>
+		<string>Audio File Info</string>
+	</dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputPath</key>
+		<dict>
+			<key>description</key>
+			<string>Path</string>
+			<key>name</key>
+			<string>Path</string>
+		</dict>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputFileLoaded</key>
+		<dict>
+			<key>description</key>
+			<string>Audio File was Successfully Loaded</string>
+			<key>name</key>
+			<string>File Loaded</string>
+		</dict>
+		<key>outputDuration</key>
+		<dict>
+			<key>description</key>
+			<string>Audio File's Duration in Seconds</string>
+			<key>name</key>
+			<string>Duration</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

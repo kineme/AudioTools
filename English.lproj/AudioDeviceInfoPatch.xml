@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>Kineme Audio</string>
+		<key>categories</key>
+		<array>
+			<string>Kineme Audio</string>
+		</array>
+		<key>copyright</key>
+		<string>Copyright 2009 Kosada Incorporateed. All rights reserved.</string>
+		<key>description</key>
+		<string>The Kineme Audio Device Info Patch provides information about the available hardware audio output devices.
+
+http://kineme.net/</string>
+		<key>name</key>
+		<string>Audio Device Info</string>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputInputDevices</key>
+		<dict>
+			<key>description</key>
+			<string>List of devices supporting audio input,
+including Device UID, Name, Manufacturer, and Number of Input and Output Channels</string>
+			<key>name</key>
+			<string>Input Devices</string>
+		</dict>
+		<key>outputOutputDevices</key>
+		<dict>
+			<key>description</key>
+			<string>List of devices supporting audio output,
+including Device UID, Name, Manufacturer, and Number of Input and Output Channels</string>
+			<key>name</key>
+			<string>Output Devices</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
