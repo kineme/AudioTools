@@ -5,6 +5,7 @@ Kineme AudioTools is a Quartz Composer plugin for audio input and output. It pro
    - Playing audio from files
    - Getting waveforms and frequencies from files and devices
    - Getting information about input and output devices
+   - Embedding audio files inside compositions
    - Playing the system beep
 
 For more Quartz Composer plugins and compositions, plus community forums, go to [kineme.net](http://kineme.net). 
