@@ -24,6 +24,8 @@
 
 	AudioToolsFFT *_fft;
 	pthread_mutex_t dataLock;
+	
+	QCStringPort *inputChannels;
 }
 
 - (id)initWithIdentifier:(id)fp8;

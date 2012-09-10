@@ -47,6 +47,8 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 	NSUInteger currentChannel=0;
 	unsigned int freqMode = [inputFrequencyMode indexValue];
 	
+	NSArray *channel_strings = [[[inputChannels stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsSeparatedByString:@","];
+	
 	for(currentBuffer=0;currentBuffer<audioBufferList->mNumberBuffers;++currentBuffer)
 	{
 		AudioBuffer audioBuffer = audioBufferList->mBuffers[currentBuffer];
@@ -56,7 +58,12 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 		unsigned int dataSize = audioBuffer.mDataByteSize/(audioBuffer.mNumberChannels * sizeof(float));
 		
 		for(j = 0; j < audioBuffer.mNumberChannels; ++j)
-		{
+		{		
+			if(![[inputChannels stringValue] isEqualToString:@"all"])
+			if(![channel_strings containsObject:[NSString stringWithFormat:@"%u",j]]) {
+				continue;
+			}
+			
 			NSMutableArray *channel = [[NSMutableArray allocWithZone:NULL] initWithCapacity: dataSize];
 			unsigned int offset = j;
 			max  = 0;
@@ -99,7 +106,7 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 			[fchan release];
 		}
 	}
-
+	
 	QCStructure *oldAudioFreq = audioFreq;
 	QCStructure *oldAudioData = audioData;
 	QCStructure *oldAudioPeaks = audioPeaks;
@@ -125,6 +132,8 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 
 		[inputFrequencyMode setIndexValue:0];
 		[inputFrequencyMode setMaxIndexValue:3];
+		
+		[inputChannels setStringValue:@"all"];
 	}
 
 	return self;
@@ -227,7 +236,7 @@ static OSStatus audioBufferHandler(AudioDeviceID		inDevice,
 {
 	if( [inputDeviceUID wasUpdated] )
 		[self setDeviceUID:[inputDeviceUID stringValue]];
-
+	
 	if(audioData)
 	{
 		QCStructure *localAudioData;
