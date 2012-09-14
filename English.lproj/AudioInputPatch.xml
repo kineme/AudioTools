@@ -48,7 +48,7 @@ or specify an empty string for the system default output device</string>
 		<key>inputChannels</key>
 		<dict>
 			<key>description</key>
-			<string>Which channels to analyze.  Default is "all", other values must be comma separated.  Ex: "1,4,6".</string>
+			<string>Which channels to analyze.  Default is "all" (meaing all audio channels are analyzed).  Other values must be comma separated.  Ex: "1,4,6" analyzes channels 1, 4, and 6.</string>
 			<key>name</key>
 			<string>Channels</string>
 		</dict>
